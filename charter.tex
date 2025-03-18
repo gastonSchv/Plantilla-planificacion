@@ -25,11 +25,11 @@
 \pertenenciaCoDirector{FIUBA}
 
 % Nombre del cliente, quien va a aprobar los resultados del proyecto, se puede usar con el comando \clientename y \empclientename
-\cliente{Andrés Kirschbaum}
+\cliente{Ing. Andrés Kirschbaum }
 \empresaCliente{Producteca}
  
 \fechaINICIO{4 de marzo de 2025}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{22 de abril de 2023} 	%Fecha de final de cursada de GdP
+\fechaFINALPlan{22 de abril de 2025} 	%Fecha de final de cursada de GdP
 \fechaFINALTrabajo{TBD}	%Fecha de defensa pública del trabajo final
 
 
@@ -85,7 +85,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en desarrollar una herramienta de aprendizaje automático que permita predecir el volumen de venta de los productos de un cliente en un canal de venta online específico. El trabajo tendrá un presupuesto preliminar estimado de 600 horas y un costo estimado de \$ XXX, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,51 +106,48 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
 
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
+El presente proyecto se desarrolla en el marco de la empresa Producteca (Parsimotion S.A.), una compañía SaaS que permite la integración de sistemas con el objetivo de automatizar y simplificar la operación de venta online. Producteca ocupa un rol de relevancia dentro del ecosistema del e-commerce, facilitando la gestión a vendedores de gran volumen como retailers, marcas reconocidas y distribuidores.	
 
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
+Uno de los principales desafíos que enfrenta la empresa es la generación de Upselling, es decir, lograr que sus clientes vendan en más canales de venta online. Actualmente, los clientes perciben esta expansión como riesgosa debido a la incertidumbre sobre la demanda en nuevos canales y al costo asociado a la operación.
 
+
+El problema de la predicción de ventas en nuevos canales es un desafío recurrente en el ámbito del E-commerce y el Retail. Existen enfoques basados en técnicas de Forecasting tradicional, como modelos ARIMA y Holt-Winters. Sin embargo, la mayoría de estas soluciones requieren datos históricos extensos del canal en cuestión, lo que limita su aplicabilidad a la problemática de la expansión de ventas en nuevos canales.
+
+
+Este proyecto busca desarrollar una herramienta de aprendizaje automático que prediga el volumen de ventas de un producto en un canal de venta online específico. La solución aportará valor tanto a los clientes de Producteca como a la propia empresa.
 \begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
+
+\item Para los clientes: reducirá la incertidumbre en la toma de decisiones sobre la expansión de sus canales de venta, permitiéndoles evaluar con mayor confianza las oportunidades comerciales.
+
+\item Para Producteca: permitirá focalizar sus recursos comerciales en clientes con mayor potencial de expansión, optimizando esfuerzos y reduciendo costos.
 \end{itemize}
 
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
 
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+El sistema propuesto se compone de los siguientes módulos:
+\begin{itemize}
+\item Obtención de datos: obtención de datos históricos de ventas en diferentes canales, atributos de los productos y características de los clientes.
 
-\begin{figure}[htpb]
-\centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
-\caption{Diagrama en bloques del sistema.}
-\label{fig:diagBloques}
-\end{figure}
+\item Procesamiento de datos: limpieza y tratamiento de la información obtenida 
 
-\vspace{25px}
+\item Modelo de predicción: desarrollo de un modelo de aprendizaje que estime el potencial de ventas en un canal no explorado.
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
+\item Interfaz de usuario: creación de una herramienta accesible para el equipo comercial de Producteca, donde se puedan consultar las predicciones de ventas.
 
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
+\item Evaluación y ajuste: implementación de métricas de desempeño para ajustar y mejorar continuamente el modelo.
+\end{itemize}
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+Los datos utilizados para el entrenamiento y la predicción en este proyecto serán completamente anónimos con respecto a los usuarios de la plataforma. Es decir, no se manejarán datos personales, fiscales o corporativos expuestos en bases de datos, ya que solo se trabajará con la información de las ventas y productos asociados, vinculadas al cliente únicamente a través del identificador numérico de su cuenta, el cual no contiene información sensible. Asimismo, las bases de datos, vistas y tablas utilizadas en este proyecto no contendrán datos personales o de usuario y serán eliminadas una vez finalizado el trabajo.
+
+El trabajo será realizado ad-honorem por el alumno, y sus resultados serán entregados al cliente. Se establecerán acuerdos sobre el desarrollo y la propiedad intelectual, aplicables a todo lo que se genere dentro de la empresa. Esto implica que el código validado se almacenará en repositorios internos y que los modelos entrenados se considerarán confidenciales, sin posibilidad de uso fuera de la compañía.
+
+% Falta agregar diagrama
+
+
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
 
 
 \begin{table}[ht]
@@ -160,73 +157,57 @@ Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla
 \hline
 \rowcolor[HTML]{C0C0C0} 
 Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
+Cliente       & \clientename      &\empclientename	& CEO       	\\ \hline
 Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
 Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+Usuario final & Equipo comercial        & Producteca              	& -        	\\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+	\item Cliente: el \clientename  tiene un elevado conocimiento técnico de programación, arquitectura e infraestructura de sistemas. Puede brindar apoyo al momento de poner en producción la herramienta generada.
+	
+	\item Usuario final: son quienes utilizarán la herramienta una vez desarrollada. Podrán utilizarla en su trabajo cotidiano para obtener información que los ayude en el proceso de Upselling. Aunque no forme parte de sus habilidades principales, el equipo posee conocimientos técnicos que le permiten interactuar con sistemas sin necesidad de contar con interfaz de usuario.
 \end{itemize}
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+Este proyecto busca desarrollar una herramienta de aprendizaje automático que permita predecir el volumen de ventas de un producto en un canal de venta online específico. La solución ayudará a los clientes de Producteca a reducir la incertidumbre al expandirse a nuevos canales, brindando estimaciones más precisas sobre su desempeño comercial. A su vez, permitirá a Producteca optimizar su estrategia de Upselling, enfocando sus recursos en vendedores con mayor potencial de crecimiento.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El desarrollo de este proyecto incluirá la creación e implementación de un modelo de aprendizaje automático que prediga el volumen de ventas de un producto en un canal de venta online específico. Además de construir el modelo,se integrará dentro del ecosistema de Producteca, asegurando su viabilidad operativa. Se definirán métricas clave para validar la precisión y desempeño del modelo y se establecerá un pipeline que permita su despliegue en producción.
 
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
+El presente proyecto incluye:
 
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
 
-El proyecto incluye:
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+\item Comprender el contexto del negocio y los desafíos de expansión de canales de venta.
+\item Definir las fuentes de datos internas y su disponibilidad para el entrenamiento del modelo.
+\item Seleccionar y justificar la metodología de modelado más adecuada para la predicción de volumen de ventas.
+\item Acordar con Producteca las métricas y KPIs que definirán el éxito del modelo.
+\item Desarrollar, entrenar y validar un modelo predictivo basado en aprendizaje automático.
+\item Desarrollar un pipeline para la implementación en producción dentro del ecosistema de Producteca.
+\item Realizar pruebas de backtesting y validaciones en un entorno de pruebas controlado.
+\item Documentar el desarrollo y los resultados, y presentar el modelo a los equipos involucrados.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
 
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+El presente proyecto no incluye:
+
+\begin{itemize}
+\item Evaluar el impacto del modelo en la toma de decisiones comerciales de Producteca y sus clientes.
+\item La integración del modelo con sistemas externos a Producteca, como marketplaces o ERPs de clientes.
+\item El desarrollo de una interfaz gráfica o dashboard para visualizar los resultados del modelo.
+\item La automatización completa del pipeline de datos más allá del proceso de modelado y validación.
+\item La implementación de estrategias comerciales basadas en las predicciones generadas.
+\end{itemize}
+
 
 
 \section{5. Supuestos del proyecto}
